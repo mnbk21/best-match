@@ -1,0 +1,17 @@
+
+
+それぞれが異なるURLで表示されるようにページ設定（ルーティング）をしましょう。
+ページ設定に使うreact-router-domをインストールします。
+
+npm i react-router-dom
+
+
+
+
+
+<Route path="/" element={<Home/>}/>
+
+pathにはURLを、elementにはそのURLで表示したいコンポーネントを書き込みます。
+
+なおトップページにあたる/は次のように書いても大丈夫です。
+<Route index element={<Home/>}/>
