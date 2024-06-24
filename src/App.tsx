@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react"
 import { Routes, Route } from "react-router-dom"
+import Header from "./components/Header"
 import Home from "./pages/Home"
 import Register from "./pages/Register"
 import Search from "./pages/Search"
@@ -23,7 +24,7 @@ const App = () => {
 
   }
 
-  console.log(loggedIn)
+  // console.log(loggedIn)
 
   const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -38,6 +39,7 @@ const App = () => {
 
   return (
     <>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="*" element={<h1>ページがありません</h1>}/>
