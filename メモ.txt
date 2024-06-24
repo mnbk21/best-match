@@ -15,3 +15,19 @@ pathにはURLを、elementにはそのURLで表示したいコンポーネント
 
 なおトップページにあたる/は次のように書いても大丈夫です。
 <Route index element={<Home/>}/>
+
+
+
+インラインで書くと型情報が表示される
+
+
+
+
+
+
+Local Storageにデータを保管するコードは次のようになっています。
+localStorage.setItem(データの名前, 保管するデータ)
+
+「データの名前」は任意のものが使えます。ここでJSON.stringify()
+というJavaScriptのコードが使われているのは、今回保存したいuserがオブジェクトだからです。
+オブジェクトや配列をLocalStorageを保管するときにはJSON.stringify()が必要です。
