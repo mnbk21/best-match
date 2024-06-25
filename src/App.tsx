@@ -32,6 +32,11 @@ const App = () => {
     setLoggedIn(true)
   }
 
+  const handleDelete = () => {
+    localStorage.removeItem("user-data")
+    setLoggedIn(false) // ログアウトと同時にloggedInをfalseにする
+  }
+
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user-data") || "{}")
     userData && setLoggedIn(true)
@@ -39,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <Header/>
+      <Header loggedIn={loggedIn} handleDelete={handleDelete} user={user}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="*" element={<h1>ページがありません</h1>}/>
@@ -47,7 +52,6 @@ const App = () => {
         { loggedIn &&
           <Route path="/search" element={<Search/>}/>
         }
-          
       </Routes>
     </>
   )
