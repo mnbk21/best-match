@@ -21,18 +21,18 @@ const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
         <ul>
           <li>
             <Link to="/">
-              <Button text="ホーム" buttonColor="#f82553" handler={handleDelete}/>
+              <Button text="ホーム" buttonColor="#f82553" padding={[3, 30, 3, 30]}/>
             </Link>
           </li>
           <li>
             <Link to="/register">
-              <Button text="登録" buttonColor="#2190f8"/>
+              <Button text="登録" buttonColor="#2190f8" padding={[3, 30, 3, 30]}/>
             </Link>
           </li>
           <li>
             {loggedIn &&
               <Link to="/search">
-                <Button text="検索" buttonColor="#49cc5c"/>
+                <Button text="検索" buttonColor="#49cc5c" padding={[3, 30, 3, 30]}/>
               </Link>
             }
           </li>
@@ -47,7 +47,7 @@ const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
         {loggedIn &&
           <div>
             <div className="pulse"></div>
-            <Button text="ログアウト" buttonColor="#fb6640"/>
+            <Button text="ログアウト" buttonColor="#fb6640" handler={handleDelete} padding={[3, 30, 3, 30]} textColor="silver"/>
           </div>
         }
       </div>

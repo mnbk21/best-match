@@ -3,15 +3,26 @@ type ButtonProps = {
   text: string;
   buttonColor: string;
   handler?: () => void;
+  // padding: Array<number>;
+  padding: [number, number, number, number];
+  textColor?: "yellow" | "silver";
 }
 
-const Button = ({ handler, text, buttonColor }: ButtonProps) => {
+const Button = ({ handler, text, buttonColor, padding, textColor }: ButtonProps) => {
   return (
-    <a href="/contact">
-      <button onClick={handler} style={{background: buttonColor}}>
-        {text}
-      </button>
-    </a>
+    <button onClick={handler} 
+      style={{
+        background: buttonColor,
+        padding: `
+          ${padding[0]}px
+          ${padding[1]}px
+          ${padding[2]}px
+          ${padding[3]}px
+        `,
+        color: textColor,
+      }}>
+      {text}
+    </button>
   )
 }
 
