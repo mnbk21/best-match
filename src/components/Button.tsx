@@ -3,7 +3,6 @@ type ButtonProps = {
   text: string | number;
   buttonColor: string;
   handler?: () => void;
-  // padding: Array<number>;
   padding: [number, number, number, number];
   textColor?: "yellow" | "silver";
   borderRadius?: number;

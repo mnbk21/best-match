@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom"
+import headerImg from "../assets/header-img.svg"
 import Button from "./Button"
 
 type UserProps = {
@@ -17,7 +18,7 @@ const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
   return  (
     <header>
       <div>
-        Header
+      <img src={headerImg}/>
         <ul>
           <li>
             <Link to="/">
@@ -36,14 +37,22 @@ const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
               </Link>
             }
           </li>
+
+          <li>
+            {loggedIn &&
+              <Link to="/search-detailed">
+                <Button text="詳細" buttonColor="#cc49a9" padding={[3, 30, 3, 30]}/>
+              </Link>
+            }
+          </li>
+
         </ul>
       </div>
 
       <div>
         {user && loggedIn &&
-          <p>{user.name}さん、こんにちは</p>
+          <p>{user.name}さん、こんにちは！</p>
         }
-
         {loggedIn &&
           <div>
             <div className="pulse"></div>
