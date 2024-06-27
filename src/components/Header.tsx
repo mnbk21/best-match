@@ -17,8 +17,8 @@ type HeaderProps = {
 const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
   return  (
     <header>
-      <div>
-      <img src={headerImg}/>
+      <div className="header__inner">
+      <img src={headerImg} className="header__inner-img"/>
         <ul>
           <li>
             <Link to="/">
@@ -49,13 +49,14 @@ const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
         </ul>
       </div>
 
-      <div>
+      <div className="userArea">
         {user && loggedIn &&
-          <p>{user.name}さん、こんにちは！</p>
+          // <p className="userArea__name">{user.name}さん、こんにちは！</p>
+          <p className="userArea__name">{user.name}さん</p>
         }
         {loggedIn &&
-          <div>
-            <div className="pulse"></div>
+          <div className="userArea__logout">
+            <div className="userArea__pulse"></div>
             <Button text="ログアウト" buttonColor="#fb6640" handler={handleDelete} padding={[3, 30, 3, 30]} textColor="silver"/>
           </div>
         }

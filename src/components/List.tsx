@@ -12,7 +12,7 @@ function List<T extends CandidateProps | CandidatePropsD>({ candidates }: ListPr
       {candidates.map((candidate, index) => {
         if("firstName" in candidate){
           return(
-            <div key={index}>
+            <div className="list-container__list" key={index}>
               <p>名前: {candidate.firstName}</p>
               <p>メール: {candidate.email}</p>
               <p>身長: {candidate.height}</p>

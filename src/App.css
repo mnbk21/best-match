@@ -10,12 +10,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
   
-html{
+html {
     font-size: 62.5%;
     overflow-y:scroll;
 }
 
-body{
+body {
     font-family: "IBM Plex Sans JP", sans-serif;
     font-weight: 400;
     font-size: 1.7rem;
@@ -24,53 +24,53 @@ body{
     color: #ffffff;
 }
 
-h1{
+h1 {
     font-size: 5rem;
     font-family: "Red Rose", serif;
     font-optical-sizing: auto;
     font-weight: 600;
 }
 
-h2{
+h2 {
     font-size: 3.5rem;
     letter-spacing: 0.4rem;
     margin-bottom: 3rem;
     text-align: center;
 }
 
-h3{
+h3 {
     font-size: 3rem;
 }
 
-p{
+p {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-size: 1.7rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-li{
+li {
     display: inline-block;
     margin: 0 1rem 0 0;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-main{
+main {
     max-width: 900px; 
     margin: 10rem auto;
     padding-right: 2rem; 
     padding-left:  2rem;
 }
 
-button{
+button {
     display: block;
     border: none;
     outline: none;
@@ -84,60 +84,102 @@ button{
     min-width: 3.8rem;
 }
 
-button:hover{
+button:hover {
     opacity: 0.7;
 } 
 
 /* Header */
-header{
+header {
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 0.6rem white solid;
-    padding: 0 2rem;
+    /* padding: 0 3%; */
+    padding-top: 8px;
+    /* padding-bottom: 8px; */
+    padding-right: clamp(10px, 2.5vw, 20px);
+    padding-left: clamp(10px, 2.5vw, 20px);
     background-color: #1e1e1e;
     max-width: 1500px; 
     margin: 0 auto;
 }
 
-header > * > p{
+.header__inner {
+  width: 80%;
+  max-width: 400px;
+}
+
+.header__inner-img {
+  width: 100%;
+}
+
+header > * > p {
   color: #fff;
 }
 
-header > div > div:nth-child(2){
+.header__inner .register-Button {
+  width: clamp(62px, 16vw, 90px);
+  margin-bottom: 6px;
+  padding: 0.2rem 0;
+  display: block;
+}
+
+/* header > div > div:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
-header > div > div:nth-child(2) > button{
+header > div > div:nth-child(2) > button {
     margin-right: 0;
 }
 
-header > * > img{
+header > * > img {
     width: 40rem
 }
 
-header > * > button{
+header > * > button {
     padding: 0 16px;
     background-color: transparent;
     border: 1px solid #0070d2;
     color: #0070d2;
 }
 
-.pulse{
+
+.userArea__logout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userArea__logout .register-Button {
+  width: fit-content;
+  margin: 0 0 0 10px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  flex-shrink: 0;
+}
+
+.userArea__pulse {
     background: #00d219;
     border-radius: 50%;
-    margin: 10px;
+    /* margin: 10px; */
+    margin: 10px 0;
     height: 14px;
     width: 14px;
+    flex-shrink: 0;
     box-shadow: 0 0 0 0 #00d219;
     transform: scale(1);
     animation: pulse 2s infinite;
 }
 
-@keyframes pulse{
+.userArea__name {
+  width: fit-content;
+  margin: 0 0 10px auto;
+  margin-right: 0;
+  font-size: clamp(12px, 2.5vw, 14px);
+}
+
+@keyframes pulse {
     0%{
         transform: scale(0.95);
         box-shadow: 0 0 0 0 #00d219;
@@ -155,20 +197,30 @@ header > * > button{
 }
 
 /* Home */
-.home{
+.home {
     text-align: center;
 }
 
-.home > p{
+.home-text {
+  width: auto;
+}
+
+.home > p {
     margin-bottom: 2rem;
+}
+
+.home .register-Button {
+  width: 220px;
+  padding: 8px 0;
 }
 
 
 /* Register */
-input[type=text], input[type=email], textarea{
+input[type=text], input[type=email], textarea {
     width: 70%;
+    max-width: 400px;
     font-family: inherit;
-    padding: 0.4rem 0.6rem;
+    padding: 0.6rem;
     margin: 2rem auto 2rem;
     box-sizing: border-box;
     border: solid 1px transparent;
@@ -176,34 +228,65 @@ input[type=text], input[type=email], textarea{
     display: block;
 }
 
-/* Search */
-.search > button{
-    margin-top: 2rem;
+form .register-Button {
+  width: 70%;
+  max-width: 400px;
+  padding: 8px 0;
 }
+
+/* Search */
+
+/* .search > button {
+    margin-top: 2rem;
+} */
+
+.search button:first-of-type {
+  margin-bottom: 2rem;
+  padding: 0.6rem 5rem;
+}
+
+.search button:nth-of-type(2) {
+  width: 40px;
+  height: 40px;
+}
+
+
 
 /* List */
-.list-container{
-    display: grid;
+.list-container {
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
-    justify-items: start;
+    justify-items: center;
+    margin-top: 4rem; */
+
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 4rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.list-container > * > img{
+.list-container__list {
+  width: 28%;
+  margin-bottom: 6rem;
+  word-wrap: break-word;
+}
+
+.list-container > * > img {
     width: 200px;
     border-radius: 1rem;
 }
 
 /* Loading */
-.loading{
+.loading {
     width: 48px;
     height: 48px;
     position: relative;
     margin: 12rem auto 0;
 }
 
-.loading::before , .loading::after{
+.loading::before , .loading::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -228,13 +311,13 @@ input[type=text], input[type=email], textarea{
     animation: blast 0.4s ease-in infinite;
 }
 
-.loading::after{
+.loading::after {
     font-size: 1px;
     background: #35ff6e;
     animation: bounce 0.4s ease-in infinite;
 }
   
-@keyframes bounce{
+@keyframes bounce {
     0%, 100%{font-size: 0.75px}
     50%{font-size: 1.5px}
 }
@@ -250,16 +333,30 @@ input[type=text], input[type=email], textarea{
     }
 }
 
-@media only screen and (max-width: 700px){
-    .list-container{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        justify-items: center;
-    }
+@media only screen and (max-width: 700px) {
 
-    .list-container > * > img{
-        width: 200px;
-        border-radius: 1rem;
-    }
+  .home-text {
+    width: 100%;
+    margin: 0 auto;
+    font-size: clamp(42px, 12vw, 50px);
+  }
+
+  .list-container {
+    justify-content: center;
+
+    /* display: block; */
+      /* display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      justify-items: center; */
+  }
+
+  .list-container > * > img {
+      width: 200px;
+      border-radius: 1rem;
+  }
+
+  .list-container__list {
+    width: 90%;
+  }
 }
