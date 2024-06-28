@@ -12,7 +12,7 @@ function List<T extends CandidateProps | CandidatePropsD>({ candidates }: ListPr
       {candidates.map((candidate, index) => {
         if("firstName" in candidate){
           return(
-            <div className="list-container__list" key={index}>
+            <div className="list-container__search-list" key={index}>
               <p>名前: {candidate.firstName}</p>
               <p>メール: {candidate.email}</p>
               <p>身長: {candidate.height}</p>
@@ -20,7 +20,7 @@ function List<T extends CandidateProps | CandidatePropsD>({ candidates }: ListPr
           )
         } else if ("picture" in candidate){	
           return (	
-          <div key={index}>	
+          <div className="list-container__detail-list" key={index}>	
             <img src={candidate.picture.large}/>	
             <p>名前: {candidate.name.first}</p>	
             <p>年齢: {candidate.dob.age}</p>	
@@ -30,6 +30,7 @@ function List<T extends CandidateProps | CandidatePropsD>({ candidates }: ListPr
         }	
       })}	
     </div>
+
   )
 }
 

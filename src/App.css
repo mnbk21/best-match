@@ -64,7 +64,7 @@ ul {
 }
 
 main {
-    max-width: 900px; 
+    max-width: 1050px; 
     margin: 10rem auto;
     padding-right: 2rem; 
     padding-left:  2rem;
@@ -90,19 +90,18 @@ button:hover {
 
 /* Header */
 header {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 0.6rem white solid;
-    /* padding: 0 3%; */
-    padding-top: 8px;
-    /* padding-bottom: 8px; */
-    padding-right: clamp(10px, 2.5vw, 20px);
-    padding-left: clamp(10px, 2.5vw, 20px);
-    background-color: #1e1e1e;
-    max-width: 1500px; 
-    margin: 0 auto;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.6rem white solid;
+  padding-top: 8px;
+
+  padding-right: clamp(10px, 2.5vw, 20px);
+  padding-left: clamp(10px, 2.5vw, 20px);
+  background-color: #1e1e1e;
+  max-width: 1500px; 
+  margin: 0 auto;
 }
 
 .header__inner {
@@ -124,12 +123,6 @@ header > * > p {
   padding: 0.2rem 0;
   display: block;
 }
-
-/* header > div > div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 header > div > div:nth-child(2) > button {
     margin-right: 0;
@@ -214,7 +207,6 @@ header > * > button {
   padding: 8px 0;
 }
 
-
 /* Register */
 input[type=text], input[type=email], textarea {
     width: 70%;
@@ -235,11 +227,6 @@ form .register-Button {
 }
 
 /* Search */
-
-/* .search > button {
-    margin-top: 2rem;
-} */
-
 .search button:first-of-type {
   margin-bottom: 2rem;
   padding: 0.6rem 5rem;
@@ -250,26 +237,33 @@ form .register-Button {
   height: 40px;
 }
 
-
-
 /* List */
 .list-container {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    justify-items: center;
-    margin-top: 4rem; */
-
-    display: flex;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.list-container__list {
+.list-container:has(.list-container__search-list) {
+  justify-content: space-between;
+}
+
+.list-container:has(.list-container__detail-list) {
+  justify-content: center;
+}
+
+
+
+.list-container__search-list {
   width: 28%;
   margin-bottom: 6rem;
+  word-wrap: break-word;
+}
+
+.list-container__detail-list {
+  width: fit-content;
+  margin: 0 60px 50px;
   word-wrap: break-word;
 }
 
@@ -343,12 +337,6 @@ form .register-Button {
 
   .list-container {
     justify-content: center;
-
-    /* display: block; */
-      /* display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      justify-items: center; */
   }
 
   .list-container > * > img {
@@ -356,7 +344,7 @@ form .register-Button {
       border-radius: 1rem;
   }
 
-  .list-container__list {
-    width: 90%;
+  .list-container__search-list {
+    width: 100%;
   }
 }
