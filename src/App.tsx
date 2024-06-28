@@ -22,7 +22,7 @@ const App = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     
     setUser({
-      ...user, // スプレッド構文
+      ...user,
       [event.target.name]: event.target.value
     })
 
@@ -37,7 +37,7 @@ const App = () => {
 
   const handleDelete = () => {
     localStorage.removeItem("user-data")
-    setLoggedIn(false) // ログアウトと同時にloggedInをfalseにする
+    setLoggedIn(false)
     navigate("/")
   }
 

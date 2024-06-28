@@ -51,7 +51,6 @@ const Header = ({ user, loggedIn, handleDelete }: HeaderProps) => {
 
       <div className="userArea">
         {user && loggedIn &&
-          // <p className="userArea__name">{user.name}さん、こんにちは！</p>
           <p className="userArea__name">{user.name}さん</p>
         }
         {loggedIn &&
