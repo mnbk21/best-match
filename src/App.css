@@ -209,7 +209,7 @@ header > * > button {
 
 /* Register */
 input[type=text], input[type=email], textarea {
-    width: 70%;
+    width: 86%;
     max-width: 400px;
     font-family: inherit;
     padding: 0.6rem;
@@ -221,8 +221,9 @@ input[type=text], input[type=email], textarea {
 }
 
 form .register-Button {
-  width: 70%;
-  max-width: 400px;
+  width: 64%;
+  max-width: 250px;
+  margin-top: 30px;
   padding: 8px 0;
 }
 
