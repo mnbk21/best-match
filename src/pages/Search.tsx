@@ -34,7 +34,7 @@ const Search = () => {
 
   return (
     <div className="search">
-      <h2>検索ページ</h2>
+      <h2 className="title-page">検索ページ</h2>
       <Button text="候補者を表示" handler={getCandidatesData} buttonColor="#2c7ce5" padding={[6, 40, 6, 40]}/>
       <Button text={count} handler={handleReset} buttonColor="#f8213a" padding={[10, 12, 10, 12]} borderRadius={50}/>
       {loading ? <Loading/> : <List candidates={candidates}/>}

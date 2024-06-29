@@ -11,52 +11,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
   
 html {
-  font-size: 62.5%;
   overflow-y:scroll;
 }
 
 body {
   font-family: "IBM Plex Sans JP", sans-serif;
   font-weight: 400;
-  font-size: 1.7rem;
+  font-size: 16px;
   font-display: swap;
   background-image: linear-gradient(to right, #ff6382, #6d83f3);
   color: #ffffff;
-}
-
-h1 {
-  font-size: 5rem;
-  font-family: "Red Rose", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 3.5rem;
-  letter-spacing: 0.4rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-h3 {
-  font-size: 3rem;
+  line-height: 1.6;
 }
 
 p {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-size: 1.7rem;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-}
-
-li {
-  display: inline-block;
-  margin: 0 1rem 0 0;
 }
 
 ul {
@@ -65,8 +41,8 @@ ul {
 
 main {
   max-width: 1050px; 
-  margin: 10rem auto;
-  padding: 0 2rem;
+  margin: 100px auto;
+  padding: 0 20px;
 }
 
 button {
@@ -75,12 +51,11 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 auto;
-  font-size: 1.4rem;
+  font-size: 1.4px;
   font-weight: 400;
   color: white;
-  letter-spacing: 0.1rem;
-  border-radius: 0.5rem;
-  min-width: 3.8rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
 }
 
 button:hover {
@@ -89,14 +64,11 @@ button:hover {
 
 /* Header */
 header {
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 0.6rem white solid;
-  padding-top: 8px;
-  padding-right: clamp(10px, 2.5vw, 20px);
-  padding-left: clamp(10px, 2.5vw, 20px);
+  border-bottom: 4px white solid;
+  padding: 14px clamp(10px, 2.5vw, 20px) 2px;
   background-color: #1e1e1e;
   max-width: 1500px; 
   margin: 0 auto;
@@ -115,19 +87,30 @@ header > * > p {
   color: #fff;
 }
 
-.header__inner .register-Button {
-  width: clamp(62px, 16vw, 90px);
-  margin-bottom: 6px;
-  padding: 0.2rem 0;
+.header__inner ul {
+  margin-right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.header__inner li {
+  width: clamp(78px, 16vw, 90px);
+  margin: 0 10px 10px 0;
+  margin-bottom: 8px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.header__inner li a {
   display: block;
 }
 
-header > div > div:nth-child(2) > button {
-  margin-right: 0;
-}
-
-header > * > img {
-  width: 40rem
+.header__inner .register-Button {
+  width: 100%;
+  font-size: 15px;
+  text-wrap: nowrap;
+  padding: 2px 0;
 }
 
 header > * > button {
@@ -193,27 +176,48 @@ header > * > button {
 
 .home-text {
   width: auto;
+  font-family: "Red Rose", serif;
+  font-optical-sizing: auto;
+  font-size: 50px;
+  font-weight: 600;
 }
 
 .home > p {
-  margin-bottom: 2rem;
+  font-size: 18px;
+  margin-bottom: 26px;
+}
+
+.home a:has(.register-Button) {
+  width: 220px;
+  margin: 0 auto;
+  display: block;
 }
 
 .home .register-Button {
-  width: 220px;
+  width: 100%;
   padding: 8px 0;
+  display: block;
+  font-size: 16px;
 }
 
 /* Register */
+.title-page {
+  font-size: 38px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 input[type=text], input[type=email], textarea {
   width: 86%;
   max-width: 400px;
   font-family: inherit;
-  padding: 0.6rem;
-  margin: 2rem auto 2rem;
+  font-size: 15px;
+  padding: 8px;
+  margin: 20px auto 26px;
   box-sizing: border-box;
   border: solid 1px transparent;
-  border-radius: 0.5rem;
+  border-radius: 6px;
   display: block;
 }
 
@@ -222,23 +226,27 @@ form .register-Button {
   max-width: 250px;
   margin-top: 30px;
   padding: 8px 0;
+  font-size: 16px;
 }
 
 /* Search */
 .search button:first-of-type {
-  margin-bottom: 2rem;
-  padding: 0.6rem 5rem;
+  margin-bottom: 20px;
+  padding: 8px 60px;
+  font-size: 15px;
 }
 
 .search button:nth-of-type(2) {
   width: 40px;
   height: 40px;
+  font-size: 16px;
+  border-radius: 40px;
 }
 
 /* List */
 .list-container {
   display: flex;
-  margin-top: 4rem;
+  margin-top: 60px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -253,7 +261,7 @@ form .register-Button {
 
 .list-container__search-list {
   width: 28%;
-  margin-bottom: 6rem;
+  margin-bottom: 68px;
   word-wrap: break-word;
 }
 
@@ -265,7 +273,7 @@ form .register-Button {
 
 .list-container > * > img {
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 /* Loading */
@@ -273,7 +281,7 @@ form .register-Button {
   width: 48px;
   height: 48px;
   position: relative;
-  margin: 12rem auto 0;
+  margin: 46px auto 0;
 }
 
 .loading::before , .loading::after {
@@ -285,14 +293,22 @@ form .register-Button {
     width: 48em;
     height: 48em;
     background-image:
+      /* radial-gradient(circle 10px, #FFF 100%, transparent 0),
       radial-gradient(circle 10px, #FFF 100%, transparent 0),
       radial-gradient(circle 10px, #FFF 100%, transparent 0),
       radial-gradient(circle 10px, #FFF 100%, transparent 0),
       radial-gradient(circle 10px, #FFF 100%, transparent 0),
       radial-gradient(circle 10px, #FFF 100%, transparent 0),
       radial-gradient(circle 10px, #FFF 100%, transparent 0),
-      radial-gradient(circle 10px, #FFF 100%, transparent 0),
-      radial-gradient(circle 10px, #FFF 100%, transparent 0);
+      radial-gradient(circle 10px, #FFF 100%, transparent 0); */
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0)),
+      radial-gradient(circle 10px, #FFF 100%, rgba(255,255,255,0));
     background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em,
                          13em -13em, -13em -13em, 13em 13em, -13em 13em;
     background-repeat: no-repeat;
@@ -311,7 +327,7 @@ form .register-Button {
     0%, 100%{font-size: 0.75px}
     50%{font-size: 1.5px}
 }
-@keyframes blast{
+/* @keyframes blast{
     0% , 40%{font-size: 0.5px;}
     70%{
       opacity: 1;
@@ -321,9 +337,24 @@ form .register-Button {
       font-size: 6px;
       opacity: 0;
     }
+} */
+
+@media only screen and (max-width: 500px) {
+  .header__inner ul {
+    margin-right: 16px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
+
+  input[type=text], input[type=email], textarea {
+    padding: 8px 6px;
+    font-size: 16px;
+  }
+
+  form .register-Button {
+    font-size: 16px;
+  }
 
   .home-text {
     width: 100%;
@@ -335,17 +366,9 @@ form .register-Button {
     justify-content: center;
   }
 
-  .list-container > * > img {
-    width: 100%;
-    border-radius: 1rem;
-  }
-
   .list-container__search-list {
     width: 100%;
   }
-}
-
-@media only screen and (max-width: 700px) {
 
   .list-container:has(.list-container__detail-list) {
     justify-content: space-between;

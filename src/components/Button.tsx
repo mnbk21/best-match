@@ -8,7 +8,7 @@ type ButtonProps = {
   borderRadius?: number;
 }
 
-const Button = ({ handler, text, buttonColor, textColor, borderRadius }: ButtonProps) => {
+const Button = ({ handler, text, buttonColor, textColor }: ButtonProps) => {
   
   return (
     <button onClick={handler} 
@@ -16,7 +16,7 @@ const Button = ({ handler, text, buttonColor, textColor, borderRadius }: ButtonP
       style={{
         background: buttonColor,
         color: textColor,
-        borderRadius: borderRadius,
+        // borderRadius: borderRadius,
       }}>
       {text}
     </button>
